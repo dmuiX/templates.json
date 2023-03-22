@@ -5,9 +5,8 @@
       "type": 1,
       "title": "Confluence",
       "description": "Confluence latest with OpenJDK",
-      "logo": "https://wac-cdn.atlassian.com/dam/jcr:f0fe60cd-469f-4e78-9779-ea4cacfa07e6/Confluence-icon-blue.svg",
+      "logo": "https://icons8.com/icon/gYRR6rys6REq/confluence",
       "platform": "linux",
-      "hostname": "confluence",
       "categories": [
         "wiki",
         "atlassian",
@@ -81,7 +80,6 @@
       "description": "The most advanced open-source database",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
       "platform": "linux",
-      "hostname": "db",
       "categories": [
         "database",
         "sql-database",
