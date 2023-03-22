@@ -101,14 +101,15 @@
           "label": "Name of the application database",
           "select": [
             {
-              "text": "Confluence?",
+              "text": "Do you want to deploy a Confluence Instance?",
               "value": "confluence",
               "default": true
             },
             {
-              "text": "Jira?",
+              "text": "Do you want to deploy a Jira Instance?",
               "value": "jira"
-            },
+            }
+          ]
         },
         {
           "name": "POSTGRES_USER",
