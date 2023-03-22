@@ -13,6 +13,7 @@
         "confluence"
       ],
       "image": "atlassian/confluence-server:latest",
+      "ports": ["8090:8090/tcp", "8091:8091/tcp"],
       "volumes": [
         {
           "container": "/var/atlassian/application-data/confluence"
@@ -22,7 +23,7 @@
       "env": [
         {
           "name": "VIRTUAL_HOST",
-          "label": "Public URL of the application (mandatory)",
+          "label": "VIRTUAL_HOST: Public URL of the application (mandatory)",
           "description": "The public URL of the application used to configure the reverse proxy"
         },
         {
@@ -33,12 +34,12 @@
         },
         {
           "name": "LETSENCRYPT_HOST",
-          "label": "Public URL of the application (mandatory and same as above)",
+          "label": "LETSENCRYPT_HOST: Public URL of the application (mandatory and same as above)",
           "description": "The public URL of the application used to issue a Let's Encrypt certificate"
         },
         {
           "name": "CONFLUENCE_PROXY_NAME",
-          "label": "Public URL of the application (mandatory and same as above)",
+          "label": "CONFLUENCE_PROXY_NAME: Public URL of the application (mandatory and same as above)",
           "description": "The public URL of the application used to configure the Tomcat connector"
         },
         {
@@ -51,6 +52,60 @@
           "name": "CONFLUENCE_PROXY_SCHEME",
           "label": "Public scheme of the application (mandatory)",
           "default": "https",
+          "preset": true
+        },
+        {
+          "name": "ATL_JDBC_PASSWORD",
+          "label": "Database Password",
+          "default": "postGRES",
+          "preset": true
+        },
+        {
+          "name": "ATL_JDBC_URL",
+          "label": "Database connection string",
+          "default": "jdbc:postgresql://db:5432/confluence",
+          "preset": true
+        },
+        {
+          "name": "ATL_JDBC_USER",
+          "label": "Database User",
+          "default": "confluence",
+          "preset": true
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "PostgreSQL 9.6",
+      "description": "The most advanced open-source database",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+      "platform": "linux",
+      "categories": [
+        "database",
+        "sql-database",
+        "postgresql"
+      ],
+      "image": "postgres:14",
+      "ports": ["5432:5432/tcp"],
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql/data"
+        }
+      ],
+      "network": "app-net",
+      "env": [
+        {
+          "name": "POSTGRES_DB",
+          "label": "Name of the application database"
+        },
+        {
+          "name": "POSTGRES_USER",
+          "label": "Name of the database user (mandatory)"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Password of the database user (mandatory)",
+          "default": "postGRES",
           "preset": true
         }
       ]
