@@ -7,18 +7,20 @@
       "description": "Confluence latest with OpenJDK",
       "logo": "https://icons8.com/icon/gYRR6rys6REq/confluence",
       "platform": "linux",
+      "hostname": "confluence",
       "categories": [
         "wiki",
         "atlassian",
         "confluence"
       ],
       "image": "atlassian/confluence-server:latest",
+      "ports": ["8090:8090/tcp", "8091:8091/tcp"],
       "volumes": [
         {
           "container": "/var/atlassian/application-data/confluence"
         }
       ],
-      "network": "app-net",
+      "network": "bridge",
       "env": [
         {
           "name": "VIRTUAL_HOST",
@@ -75,10 +77,11 @@
     },
     {
       "type": 1,
-      "title": "PostgreSQL 14",
+      "title": "PostgreSQL 14 confluence",
       "description": "The most advanced open-source database",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
       "platform": "linux",
+      "hostname": "db",
       "categories": [
         "database",
         "sql-database",
@@ -91,15 +94,36 @@
           "container": "/var/lib/postgresql/data"
         }
       ],
-      "network": "app-net",
+      "network": "bridge",
       "env": [
         {
           "name": "POSTGRES_DB",
-          "label": "Name of the application database"
+          "label": "Name of the application database",
+          "select": [
+            {
+              "text": "Confluence?",
+              "value": "confluence",
+              "default": true
+            },
+            {
+              "text": "Jira?",
+              "value": "jira"
+            },
         },
         {
           "name": "POSTGRES_USER",
-          "label": "Name of the database user (mandatory)"
+          "label": "Name of the database user (mandatory)",
+          "select": [
+            {
+              "text": "Confluence?",
+              "value": "confluence",
+              "default": true
+            },
+            {
+              "text": "Jira?",
+              "value": "jira"
+            }
+          ]
         },
         {
           "name": "POSTGRES_PASSWORD",
@@ -111,4 +135,3 @@
     }
   ]
 }
-
