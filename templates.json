@@ -13,7 +13,6 @@
         "confluence"
       ],
       "image": "atlassian/confluence-server:latest",
-      "ports": ["8090:8090/tcp", "8091:8091/tcp"],
       "volumes": [
         {
           "container": "/var/atlassian/application-data/confluence"
