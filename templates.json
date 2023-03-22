@@ -5,7 +5,7 @@
       "type": 1,
       "title": "Confluence",
       "description": "Confluence latest with OpenJDK",
-      "logo": "https://icons8.com/icon/gYRR6rys6REq/confluence",
+      "logo": "https://cdn.icon-icons.com/icons2/2429/PNG/512/confluence_logo_icon_147305.png",
       "platform": "linux",
       "hostname": "confluence",
       "categories": [
@@ -77,7 +77,7 @@
     },
     {
       "type": 1,
-      "title": "PostgreSQL 14 confluence",
+      "title": "PostgreSQL 14",
       "description": "The most advanced open-source database",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
       "platform": "linux",
