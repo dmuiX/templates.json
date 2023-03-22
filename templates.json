@@ -98,15 +98,15 @@
       "env": [
         {
           "name": "POSTGRES_DB",
-          "label": "Name of the application database",
+          "label": "Database Name?",
           "select": [
             {
-              "text": "Do you want to deploy a Confluence Instance?",
+              "text": "confluence?",
               "value": "confluence",
               "default": true
             },
             {
-              "text": "Do you want to deploy a Jira Instance?",
+              "text": "jira?",
               "value": "jira"
             }
           ]
@@ -116,12 +116,12 @@
           "label": "Name of the database user (mandatory)",
           "select": [
             {
-              "text": "Confluence?",
+              "text": "confluence?",
               "value": "confluence",
               "default": true
             },
             {
-              "text": "Jira?",
+              "text": "jira?",
               "value": "jira"
             }
           ]
