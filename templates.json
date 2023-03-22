@@ -64,7 +64,7 @@
         {
           "name": "ATL_JDBC_URL",
           "label": "Database connection string",
-          "default": "jdbc:postgresql://db:5432/confluence",
+          "default": "jdbc:postgresql://confluence-db:5432/confluence",
           "preset": true
         },
         {
@@ -88,13 +88,13 @@
         "postgresql"
       ],
       "image": "postgres:14",
-      "ports": ["5432:5432/tcp"],
       "volumes": [
         {
           "container": "/var/lib/postgresql/data"
         }
       ],
       "network": "bridge",
+      "ports": ["5432/tcp"],
       "env": [
         {
           "name": "POSTGRES_DB",
