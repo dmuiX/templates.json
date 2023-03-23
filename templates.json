@@ -83,7 +83,7 @@
     },
     {
       "type": 1,
-      "title": "Jir 9",
+      "title": "Jira 9",
       "description": "Installs Jira 9",
       "logo": "https://wac-cdn.atlassian.com/dam/jcr:88902887-3bc9-48f4-b428-39ef6b0b280d/Jira%20Core-icon-blue.svg?cdnVersion=693",
       "platform": "linux",
@@ -105,7 +105,7 @@
         {
           "name": "VIRTUAL_HOST",
           "label": "VIRTUAL_HOST: Public URL of the application (mandatory)",
-          "description": "The public URL of the application used to configure the reverse proxy",
+          "description": "The public URL of the application used to configure the reverse proxy"
         },
         {
           "name": "VIRTUAL_PORT",
@@ -116,12 +116,12 @@
         {
           "name": "LETSENCRYPT_HOST",
           "label": "LETSENCRYPT_HOST: Public URL of the application (mandatory and same as above)",
-          "description": "The public URL of the application used to issue a Let's Encrypt certificate",
+          "description": "The public URL of the application used to issue a Let's Encrypt certificate"
         },
         {
           "name": "JIRA_PROXY_NAME",
           "label": "JIRA_PROXY_NAME: Public URL of the application (mandatory and same as above)",
-          "description": "The public URL of the application used to configure the Tomcat connector",
+          "description": "The public URL of the application used to configure the Tomcat connector"
         },
         {
           "name": "JIRA_PROXY_PORT",
