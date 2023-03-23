@@ -72,6 +72,12 @@
           "label": "Database User",
           "default": "confluence",
           "preset": true
+        },
+        {
+          "name": "ATL_DB_TYPE",
+          "label": "The type of database",
+          "default": "postgresql",
+          "preset": true
         }
       ]
     },
@@ -100,7 +106,6 @@
           "name": "VIRTUAL_HOST",
           "label": "VIRTUAL_HOST: Public URL of the application (mandatory)",
           "description": "The public URL of the application used to configure the reverse proxy",
-          "default": "NONE"
         },
         {
           "name": "VIRTUAL_PORT",
@@ -112,13 +117,11 @@
           "name": "LETSENCRYPT_HOST",
           "label": "LETSENCRYPT_HOST: Public URL of the application (mandatory and same as above)",
           "description": "The public URL of the application used to issue a Let's Encrypt certificate",
-          "default": "NONE"
         },
         {
           "name": "JIRA_PROXY_NAME",
-          "label": "CONFLUENCE_PROXY_NAME: Public URL of the application (mandatory and same as above)",
+          "label": "JIRA_PROXY_NAME: Public URL of the application (mandatory and same as above)",
           "description": "The public URL of the application used to configure the Tomcat connector",
-          "default": "NONE"
         },
         {
           "name": "JIRA_PROXY_PORT",
