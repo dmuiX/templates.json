@@ -13,7 +13,7 @@
         "atlassian",
         "confluence"
       ],
-      "image": "atlassian/confluence-server:latest",
+      "image": "atlassian/confluence-server:8",
       "ports": ["8090:8090/tcp", "8091:8091/tcp"],
       "volumes": [
         {
@@ -77,8 +77,82 @@
     },
     {
       "type": 1,
+      "title": "Jir 9a",
+      "description": "Installs Jira 9",
+      "logo": "https://wac-cdn.atlassian.com/dam/jcr:88902887-3bc9-48f4-b428-39ef6b0b280d/Jira%20Core-icon-blue.svg?cdnVersion=693",
+      "platform": "linux",
+      "hostname": "jira",
+      "categories": [
+        "project-management",
+        "atlassian",
+        "jira"
+      ],
+      "image": "atlassian/jira-software:9",
+      "ports": ["8081:8080/tcp"],
+      "volumes": [
+        {
+          "container": "/var/atlassian/jira"
+        }
+      ],
+      "network": "bridge",
+      "env": [
+        {
+          "name": "VIRTUAL_HOST",
+          "label": "VIRTUAL_HOST: Public URL of the application (mandatory)",
+          "description": "The public URL of the application used to configure the reverse proxy"
+        },
+        {
+          "name": "VIRTUAL_PORT",
+          "label": "Port of the application to proxy (mandatory)",
+          "default": "8080",
+          "preset": true
+        },
+        {
+          "name": "LETSENCRYPT_HOST",
+          "label": "LETSENCRYPT_HOST: Public URL of the application (mandatory and same as above)",
+          "description": "The public URL of the application used to issue a Let's Encrypt certificate"
+        },
+        {
+          "name": "JIRA_PROXY_NAME",
+          "label": "CONFLUENCE_PROXY_NAME: Public URL of the application (mandatory and same as above)",
+          "description": "The public URL of the application used to configure the Tomcat connector"
+        },
+        {
+          "name": "JIRA_PROXY_PORT",
+          "label": "Public port of the application (mandatory)",
+          "default": "443",
+          "preset": true
+        },
+        {
+          "name": "JIRA_PROXY_SCHEME",
+          "label": "Public scheme of the application (mandatory)",
+          "default": "https",
+          "preset": true
+        },
+        {
+          "name": "ATL_JDBC_PASSWORD",
+          "label": "Database Password",
+          "default": "postGRES",
+          "preset": true
+        },
+        {
+          "name": "ATL_JDBC_URL",
+          "label": "Database connection string",
+          "default": "jdbc:postgresql://jira-db:5432/jira",
+          "preset": true
+        },
+        {
+          "name": "ATL_JDBC_USER",
+          "label": "Database User",
+          "default": "jira",
+          "preset": true
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "PostgreSQL 14",
-      "description": "The most advanced open-source database",
+      "description": "Installs PostgreSQL 14",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
       "platform": "linux",
       "hostname": "db",
@@ -94,7 +168,6 @@
         }
       ],
       "network": "bridge",
-      "ports": ["5432/tcp"],
       "env": [
         {
           "name": "POSTGRES_DB",
