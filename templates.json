@@ -165,7 +165,7 @@
         "postgresql"
       ],
       "image": "postgres:14",
-      "ports": ["5432/tcp"],
+      "ports": ["5432:5432/tcp"],
       "volumes": [
         {
           "container": "/var/lib/postgresql/data"
